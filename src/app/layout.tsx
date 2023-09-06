@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: config.description,
 }
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: {
   children: React.ReactNode

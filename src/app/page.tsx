@@ -43,7 +43,7 @@ function Projects({ projects }: { projects: typeof user.projects }) {
   )
 }
 
-export default function Home() {
+export default function Page() {
   return (
     <main className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-10">
       <div className="flex flex-col space-y-16 py-16">
