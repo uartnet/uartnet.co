@@ -56,10 +56,10 @@ export default function Page() {
                 <span className="text-base leading-5 text-gray-600">{user.description}</span>
               </div>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               {user.social.map((social) => (
-                <a key={social.name} href={social.href} target="_blank" rel="noreferrer" className="text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground rounded-md flex h-7 w-7 items-center justify-center p-0">
-                  <social.icon className="h-5 w-5" aria-hidden="true" />
+                <a key={social.name} href={social.href} target="_blank" rel="noreferrer" className="text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground rounded-md flex items-center justify-center p-0">
+                  <social.icon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" aria-hidden="true" />
                   <span className="sr-only">{social.name}</span>
                 </a>
               ))}

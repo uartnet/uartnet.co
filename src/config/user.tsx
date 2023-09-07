@@ -2,7 +2,7 @@
 // Unauthorized copying of this file, via any medium is strictly prohibited
 // Proprietary and confidential
 
-import { faGithub, faXTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faXTwitter, faReddit, faProductHunt } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ReactElement } from 'react'
 import type { FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
@@ -59,6 +59,20 @@ export const user: {
             href: 'https://github.com/uartnet',
             icon: (props: Omit<FontAwesomeIconProps, 'icon'>) => (
                 <FontAwesomeIcon {...props} icon={faGithub} />
+            ),
+        },
+        {
+            name: 'product-hunt',
+            href: 'https://www.producthunt.com/@uartnet',
+            icon: (props: Omit<FontAwesomeIconProps, 'icon'>) => (
+                <FontAwesomeIcon {...props} icon={faProductHunt} />
+            ),
+        },
+        {
+            name: 'reddit',
+            href: 'https://www.reddit.com/user/uartnet',
+            icon: (props: Omit<FontAwesomeIconProps, 'icon'>) => (
+                <FontAwesomeIcon {...props} icon={faReddit} />
             ),
         },
     ],
