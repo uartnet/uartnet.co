@@ -10,12 +10,12 @@ function classNames(...classes: (string | boolean | undefined)[]): string {
   return classes.filter(Boolean).join(' ')
 }
 
-function Projects({ projects }: { projects: typeof user.projects }) {
+function Products({ products }: { products: typeof user.products }) {
   return (
     <article>
-      <h2 className="text-lg leading-none font-mono text-gray-900">projects</h2>
+      <h2 className="text-lg leading-none font-mono text-gray-900">products</h2>
       <ul role="list" className="flex flex-col space-y-8 py-8">
-        {projects.map((project) => (
+        {products.map((project) => (
           <li key={project.name} className="flex items-center justify-between gap-x-6">
             <a className="min-w-0" href={project.href}>
               <div className="flex items-start items-center gap-x-3">
@@ -33,7 +33,7 @@ function Projects({ projects }: { projects: typeof user.projects }) {
                 ))}
               </div>
               <div className="mt-2 flex items-center gap-x-2">
-                <p className="text-base leading-5 text-gray-600">{project.description}</p>
+                <p className="text-base leading-5 text-gray-600" dangerouslySetInnerHTML={{ __html: project.description }} />
               </div>
             </a>
           </li>
@@ -67,7 +67,7 @@ export default function Page() {
           </div>
         </header>
         <main>
-          <Projects projects={user.projects} />
+          <Products products={user.products} />
         </main>
         <footer>
           <div className="flex items-center justify-between">

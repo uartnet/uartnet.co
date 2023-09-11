@@ -10,10 +10,7 @@ import type { Metadata } from 'next'
 
 const font = IBM_Plex_Sans({ subsets: ['latin'], weight: '400' })
 
-export const metadata: Metadata = {
-  title: config.title,
-  description: config.description,
-}
+export const metadata: Metadata = config.metadata
 
 export default function Layout({
   children,

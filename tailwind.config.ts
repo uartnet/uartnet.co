@@ -17,7 +17,7 @@ const config: Config = {
   },
   plugins: [],
   safelist: [
-    'text-green-700', 'bg-green-50', 'ring-green-600/20'
+    'text-green-700', 'bg-green-50', 'ring-green-600/20', 'underline'
   ]
 }
 export default config
