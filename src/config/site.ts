@@ -20,9 +20,9 @@ export const config: {
             description: "software engineer",
             siteName: "@uartnet",
             images: [{
-                url: "https://uartnet.co/uartnet.png",
+                url: "/uartnet.png",
             }],
         },
-        twitter: { card: "summary_large_image", creator: "@uartnet", "images": "https://uartnet.co/uartnet.png" },
+        twitter: { card: "summary_large_image", creator: "@uartnet", "images": "/uartnet.png" },
     }
 }
