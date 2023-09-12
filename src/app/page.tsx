@@ -10,11 +10,40 @@ function classNames(...classes: (string | boolean | undefined)[]): string {
   return classes.filter(Boolean).join(' ')
 }
 
+function About({ about }: { about: typeof user.about }) {
+  return (
+    <section>
+      <h2 className="text-lg leading-none font-mono text-gray-900">about</h2>
+      <p className="text-base leading-5 text-gray-600 pt-6">
+        {about}
+      </p>
+    </section>
+  )
+}
+
+function Connect({ social }: { social: typeof user.social }) {
+  return (
+    <section>
+      <h2 className="text-lg leading-none font-mono text-gray-900">connect</h2>
+      <ul role="list" className="flex flex-col space-y-8 pt-6">
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          {social.map((item) => (
+            <a key={item.name} href={item.href} target="_blank" rel="noreferrer" className="text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground rounded-md flex items-center justify-center p-0">
+              <item.icon className="h-6 w-6 text-gray-900" aria-hidden="true" />
+              <span className="sr-only">{item.name}</span>
+            </a>
+          ))}
+        </div>
+      </ul>
+    </section>
+  )
+}
+
 function Products({ products }: { products: typeof user.products }) {
   return (
     <article>
       <h2 className="text-lg leading-none font-mono text-gray-900">products</h2>
-      <ul role="list" className="flex flex-col space-y-8 py-8">
+      <ul role="list" className="flex flex-col space-y-8 pt-6">
         {products.map((project) => (
           <li key={project.name} className="flex items-center justify-between gap-x-6">
             <a className="min-w-0" href={project.href}>
@@ -48,26 +77,20 @@ export default function Page() {
     <main className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-10">
       <div className="flex flex-col space-y-16 py-16">
         <header>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Image src={user.avatar.src} alt={user.avatar.alt} width={42} height={42} className="rounded-full bg-white" />
-              <div className="flex flex-col space-y-1">
-                <span className="text-lg leading-none font-mono text-gray-900">{user.name}</span>
-                <span className="text-base leading-5 text-gray-600">{user.description}</span>
-              </div>
-            </div>
-            <div className="flex items-center space-x-2 sm:space-x-4">
-              {user.social.map((social) => (
-                <a key={social.name} href={social.href} target="_blank" rel="noreferrer" className="text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground rounded-md flex items-center justify-center p-0">
-                  <social.icon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-900" aria-hidden="true" />
-                  <span className="sr-only">{social.name}</span>
-                </a>
-              ))}
+          <div className="flex items-center space-x-4">
+            <Image src={user.avatar.src} alt={user.avatar.alt} width={42} height={42} className="rounded-full bg-white" />
+            <div className="flex flex-col space-y-1">
+              <span className="text-lg leading-none font-mono text-gray-900">{user.name}</span>
+              <span className="text-base leading-5 text-gray-600">{user.description}</span>
             </div>
           </div>
         </header>
         <main>
-          <Products products={user.products} />
+          <div className="flex flex-col space-y-10">
+            <About about={user.about} />
+            <Connect social={user.social} />
+            <Products products={user.products} />
+          </div>
         </main>
         <footer>
           <div className="flex items-center justify-between">

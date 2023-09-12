@@ -10,6 +10,7 @@ import type { FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 export const user: {
     name: string
     description: string
+    about: string
     avatar: {
         src: string
         alt: string
@@ -28,6 +29,7 @@ export const user: {
 } = {
     name: '@uartnet',
     description: 'software engineer',
+    about: "I'm @uartnet, a Software Engineer focused on product development and deeply passionate about networking. I strive to create tech solutions that enrich people's lives and improve connectivity.",
     avatar: {
         src: '/uartnet.png',
         alt: '@uartnet',
