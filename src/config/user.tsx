@@ -56,7 +56,7 @@ export const user: {
         {
             name: "linux toolchains for cross-compilation",
             description: "Cross-compile software using our pre-built toolchains for Linux for a variety of architectures.",
-            href: "https://rstream.io/tools/file-sharing",
+            href: "https://rstream.io/tools/linux-toolchains",
             labels: [],
         },
     ],
