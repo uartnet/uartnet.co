@@ -49,7 +49,7 @@ export const user: {
     tools: [
         {
             name: "share files from command-line",
-            description: "Share files directly from your terminal. Files are <span class=\"underline\">end-to-end encrypted</span> and accessible via the download link. The download link expires after 24 hours. Transfer up to 100 MB. Free. No account required.",
+            description: "Share files directly from your terminal. Files are <span class=\"underline\">end-to-end encrypted</span> and accessible via the download link. The download link expires after 24 hours. Transfer up to 1 GB. Free. No account required.",
             href: "https://rstream.io/tools/file-sharing",
             labels: [],
         },
